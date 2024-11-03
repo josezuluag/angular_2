@@ -1,0 +1,28 @@
+<!-- signal-ejemplo-4.component.html -->
+<div class="card flex justify-content-center">
+    <div class="flex flex-column gap-2">
+        <label for="todo">Ingrese una tarea</label>
+        <input 
+            pInputText
+            #todo
+            id="todo" 
+            aria-describedby="username-help">
+        
+        <small id="username-help">
+            Ingrese las tareas a revisar
+        </small>
+    </div>
+
+    <button 
+        pButton
+        label="Agregar Tarea" 
+        severity="success" 
+        (click)="addTodo(todo)">
+    </button>
+</div>
+
+<ul>
+    @for (item of todos(); track $index) {
+        <li>{{item}}</li>
+    }
+</ul>
